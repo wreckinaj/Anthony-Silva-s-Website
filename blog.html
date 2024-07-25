@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<!--
+	Anthony Silva's Personal Website
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Anthony Silva</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script type="text/javascript"
+        	src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+		</script>
+		<script type="text/javascript">
+   			(function(){
+      			emailjs.init({
+        			publicKey: "dJkpDyR_6lr-1EcQN",
+      			});
+   			})();
+
+			function sendMail(event) {
+            	event.preventDefault();
+
+            	const serviceID = 'service_my1adig'; // Replace with your service ID
+            	const templateID = 'template_tbpm90r'; // Replace with your template ID
+
+            	const templateParams = {
+                	name: document.getElementById('name').value,
+                	email: document.getElementById('email').value,
+                	message: document.getElementById('message').value
+            	};
+
+            	emailjs.send(serviceID, templateID, templateParams)
+                	.then((response) => {
+                    	console.log('SUCCESS!', response.status, response.text);
+                    	alert('Message sent successfully!');
+                	}, (error) => {
+                    	console.log('FAILED...', error);
+                    	alert('Failed to send the message. Please try again later.');
+                	});
+        		}
+		</script>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-9ZWGQWFWTF"></script>
+		<script>
+  			window.dataLayer = window.dataLayer || [];
+  			function gtag(){dataLayer.push(arguments);}
+  			gtag('js', new Date());
+
+  			gtag('config', 'G-9ZWGQWFWTF');
+		</script>
+	</head>
+    <body class="is-preload">
+        <!-- Wrapper -->
+         <div id="wrapper" class="divided">
+            <!-- Head -->
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+						<div class="content">
+							<h1>Anthony Silva's Blog</h1>
+							<p class="major">
+								Hi! I am Anthony Silva. Welcome to my blog!
+								<br>
+								I created this blog with the purpose of detailing my achievements, work completed, and thoughts on a weekly basis.
+                                I will be creating new blog posts every Friday to explain what I have accomplished.
+							</p>
+						</div>
+						<div class="image">
+							<img src="images/me_photo.jpg" alt="Personal photo of me." />
+						</div>
+					</section>
+         </div>
+    </body>
+</html>
